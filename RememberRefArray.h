@@ -1,11 +1,9 @@
 #ifndef RememberRefArrayH
 #define RememberRefArrayH
 
-#include "RememberBase.h"
+#include <Private/RememberBase.h>
 
-#include <MusicTools.h>
-
-#include "RememberRef.h"
+#include <RememberRef.h>
 
 namespace Remember
 {
@@ -22,14 +20,14 @@ namespace Remember
       const Ref<ContainerType>& operator[](const uint16_t index) const;
 
    protected:
-      void write(RawData& rawData) const override;
-      void read(const RawData& rawData, size_t& cursor) override;
+      void write(DataVector& data) const override;
+      void read(const DataVector& data, size_t& cursor) override;
 
    private:
       Ref<ContainerType> members[ArraySize];
    };
 } // namespace Remember
 
-#include "RememberRefArray.hpp"
+#include <RememberRefArray.hpp>
 
 #endif //  RememberRefArrayH

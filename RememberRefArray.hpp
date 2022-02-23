@@ -28,17 +28,17 @@ const Remember::Ref<ContainerType>& Remember::RefArray<ContainerType, ArraySize>
 }
 
 template <typename ContainerType, uint16_t ArraySize>
-void Remember::RefArray<ContainerType, ArraySize>::write(RawData& rawData) const
+void Remember::RefArray<ContainerType, ArraySize>::write(DataVector& data) const
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].write(rawData);
+      members[index].write(data);
 }
 
 template <typename ContainerType, uint16_t ArraySize>
-void Remember::RefArray<ContainerType, ArraySize>::read(const RawData& rawData, size_t& cursor)
+void Remember::RefArray<ContainerType, ArraySize>::read(const DataVector& data, size_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].read(rawData, cursor);
+      members[index].read(data, cursor);
 }
 
 #endif // RememberRefArrayHPP

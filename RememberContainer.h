@@ -1,7 +1,7 @@
 #ifndef RememberContainerH
 #define RememberContainerH
 
-#include "RememberInterface.h"
+#include <Private/RememberInterface.h>
 
 namespace Remember
 {
@@ -11,8 +11,8 @@ namespace Remember
       inline Container();
 
    protected:
-      inline void write(RawData& rawData) const override;
-      inline void read(const RawData& rawData, size_t& cursor) override;
+      inline void write(DataVector& data) const override;
+      inline void read(const DataVector& data, size_t& cursor) override;
 
    private:
       friend class Base;

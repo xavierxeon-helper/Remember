@@ -1,13 +1,11 @@
 #ifndef RememberValueArrayH
 #define RememberValueArrayH
 
-#include "RememberBase.h"
+#include <Private/RememberBase.h>
 
 #include <initializer_list>
 
-#include <MusicTools.h>
-
-#include "RememberValue.h"
+#include <RememberValue.h>
 
 namespace Remember
 {
@@ -25,14 +23,14 @@ namespace Remember
       const Value<DataType>& operator[](const uint16_t index) const;
 
    protected:
-      void write(RawData& rawData) const override;
-      void read(const RawData& rawData, size_t& cursor) override;
+      void write(DataVector& data) const override;
+      void read(const DataVector& data, size_t& cursor) override;
 
    private:
       Value<DataType> members[ArraySize];
    };
 } // namespace Remember
 
-#include "RememberValueArray.hpp"
+#include <RememberValueArray.hpp>
 
 #endif //  RememberValueArrayH

@@ -9,18 +9,26 @@ namespace Remember
    class Root : public Remember::Container
    {
    public:
-      Root();
+      inline Root();
 
    public:
-      static void setUnsynced();
-      static bool needsSync();
+      inline static void setUnsynced();
+      inline static bool needsSync();
 
    protected:
-      void setSynced();
+      inline void setSynced();
+      inline size_t compileDataSize() const;
+      inline DataVector get() const;
+      inline void set(const DataVector& data);
 
    private:
+      using Container::read;
+      using Container::write;
+
       static bool synced;
    };
 } // namespace Remember
+
+#include <RememberRoot.hpp>
 
 #endif // RememberRootH

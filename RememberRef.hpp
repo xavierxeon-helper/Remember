@@ -53,13 +53,13 @@ const ContainerType* Remember::Ref<ContainerType>::constPointer() const
 }
 
 template <typename ContainerType>
-void Remember::Ref<ContainerType>::write(RawData& rawData) const
+void Remember::Ref<ContainerType>::write(DataVector& rawData) const
 {
    container.write(rawData);
 }
 
 template <typename ContainerType>
-void Remember::Ref<ContainerType>::read(const RawData& rawData, size_t& cursor)
+void Remember::Ref<ContainerType>::read(const DataVector& rawData, size_t& cursor)
 {
    container.read(rawData, cursor);
 }

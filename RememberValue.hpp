@@ -41,15 +41,15 @@ const DataType& Remember::Value<DataType>::constValue() const
 }
 
 template <typename DataType>
-void Remember::Value<DataType>::write(RawData& rawData) const
+void Remember::Value<DataType>::write(DataVector& data) const
 {
-   rawData.append(content);
+   data.append(content);
 }
 
 template <typename DataType>
-void Remember::Value<DataType>::read(const RawData& rawData, size_t& cursor)
+void Remember::Value<DataType>::read(const DataVector& data, size_t& cursor)
 {
-   rawData.copyToValue(content, cursor);
+   data.copyToValue(content, cursor);
 }
 
 template <typename DataType>

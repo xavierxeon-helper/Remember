@@ -1,12 +1,11 @@
 #ifndef RememberBaseH
 #define RememberBaseH
 
-#include "RememberInterface.h"
+#include <Private/RememberInterface.h>
 
 namespace Remember
 {
    class Container;
-
 
    class Base : public Interface
    {
@@ -15,6 +14,6 @@ namespace Remember
    };
 } // namespace Remember
 
-#include <RememberBase.hpp>
+#include <Private/RememberBase.hpp>
 
 #endif //  RememberBaseH

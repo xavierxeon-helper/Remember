@@ -1,7 +1,7 @@
 #ifndef RememberValueH
 #define RememberValueH
 
-#include "RememberBase.h"
+#include <Private/RememberBase.h>
 
 namespace Remember
 {
@@ -20,8 +20,8 @@ namespace Remember
       const DataType& constValue() const;
 
    protected:
-      void write(RawData& rawData) const override;
-      void read(const RawData& rawData, size_t& cursor) override;
+      void write(DataVector& data) const override;
+      void read(const DataVector& data, size_t& cursor) override;
 
    private:
       // clang-format off
@@ -36,6 +36,6 @@ namespace Remember
    };
 } // namespace Remember
 
-#include "RememberValue.hpp"
+#include <RememberValue.hpp>
 
 #endif //  RememberValueH

@@ -9,16 +9,16 @@ Remember::Container::Container()
 {
 }
 
-void Remember::Container::write(RawData& rawData) const
+void Remember::Container::write(DataVector& data) const
 {
    for (Interface* member : members)
-      member->write(rawData);
+      member->write(data);
 }
 
-void Remember::Container::read(const RawData& rawData, size_t& cursor)
+void Remember::Container::read(const DataVector& data, size_t& cursor)
 {
    for (Interface* member : members)
-      member->read(rawData, cursor);
+      member->read(data, cursor);
 }
 
 #endif // RememberContainerHPP

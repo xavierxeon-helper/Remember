@@ -2,10 +2,10 @@ INCLUDEPATH += \
    $$PWD
 
 HEADERS += \
-    $$PWD/RememberBase.h \
+    $$PWD/Private/RememberBase.h \
+    $$PWD/Private/RememberDataVector.h \
+    $$PWD/Private/RememberInterface.h \
     $$PWD/RememberContainer.h \
-    $$PWD/RememberInterface.h \
-    $$PWD/RememberRawData.h \
     $$PWD/RememberRef.h \
     $$PWD/RememberRefArray.h \
     $$PWD/RememberRoot.h \
@@ -14,11 +14,12 @@ HEADERS += \
     $$PWD/Remember.h \
 
 HEADERS += \
-   $$PWD/RememberBase.hpp \
+   $$PWD/Private/RememberBase.hpp \
+   $$PWD/Private/RememberDataVector.hpp \
    $$PWD/RememberContainer.hpp \
-   $$PWD/RememberRawData.hpp \
    $$PWD/RememberRef.hpp \
    $$PWD/RememberRefArray.hpp \
+   $$PWD/RememberRoot.hpp \
    $$PWD/RememberValue.hpp \
    $$PWD/RememberValueArray.hpp
 

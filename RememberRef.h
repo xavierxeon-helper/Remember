@@ -1,7 +1,7 @@
 #ifndef RememberRefH
 #define RememberRefH
 
-#include "RememberBase.h"
+#include <Private/RememberBase.h>
 
 namespace Remember
 {
@@ -22,8 +22,8 @@ namespace Remember
       const ContainerType* constPointer() const;
 
    protected:
-      void write(RawData& rawData) const override;
-      void read(const RawData& rawData, size_t& cursor) override;
+      void write(DataVector& rawData) const override;
+      void read(const DataVector& rawData, size_t& cursor) override;
 
    private:
       // clang-format off

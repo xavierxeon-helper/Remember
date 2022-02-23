@@ -1,7 +1,7 @@
 #ifndef RememberBaseHPP
 #define RememberBaseHPP
 
-#include <RememberBase.h>
+#include <Private/RememberBase.h>
 
 #include <RememberContainer.h>
 

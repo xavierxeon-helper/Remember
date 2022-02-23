@@ -44,17 +44,17 @@ const Remember::Value<DataType>& Remember::ValueArray<DataType, ArraySize>::oper
 }
 
 template <typename DataType, uint16_t ArraySize>
-void Remember::ValueArray<DataType, ArraySize>::write(RawData& rawData) const
+void Remember::ValueArray<DataType, ArraySize>::write(DataVector& data) const
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].write(rawData);
+      members[index].write(data);
 }
 
 template <typename DataType, uint16_t ArraySize>
-void Remember::ValueArray<DataType, ArraySize>::read(const RawData& rawData, size_t& cursor)
+void Remember::ValueArray<DataType, ArraySize>::read(const DataVector& data, size_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].read(rawData, cursor);
+      members[index].read(data, cursor);
 }
 
 #endif // RememberValueArrayHPP
