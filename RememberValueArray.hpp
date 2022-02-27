@@ -16,10 +16,8 @@ Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent)
 }
 
 template <typename DataType, uint16_t ArraySize>
-Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent,
-                                                      std::initializer_list<DataType> initialValues)
+Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent, std::initializer_list<DataType> initialValues)
    : ValueArray<DataType, ArraySize>(parent)
-
 {
    uint16_t index = 0;
    for (const DataType& value : initialValues)
