@@ -13,7 +13,7 @@ void Remember::Root::setUnsynced()
    synced = false;
 }
 
-bool Remember::Root::needsSync()
+bool Remember::Root::isUnsynced()
 {
    return (synced == false);
 }

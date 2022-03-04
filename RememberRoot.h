@@ -13,7 +13,7 @@ namespace Remember
 
    public:
       inline static void setUnsynced();
-      inline static bool needsSync();
+      inline static bool isUnsynced();
 
    protected:
       inline void setSynced();
