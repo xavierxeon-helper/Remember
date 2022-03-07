@@ -19,7 +19,8 @@ Remember::DataVector::DataVector(const std::vector<uint8_t>& data)
 Remember::DataVector& Remember::DataVector::operator=(const std::vector<uint8_t>& data)
 {
    resize(data.size());
-   std::memcpy(&this[0], &data[0], data.size());
+   for (size_t index = 0; index < data.size(); index++)
+      (*this)[index] = data[index];
 
    return *this;
 }
