@@ -10,6 +10,20 @@ Remember::DataVector::DataVector(const size_t size)
       resize(size);
 }
 
+Remember::DataVector::DataVector(const std::vector<uint8_t>& data)
+   : DataVector(0)
+{
+   *this = data;
+}
+
+Remember::DataVector& Remember::DataVector::operator=(const std::vector<uint8_t>& data)
+{
+   resize(data.size());
+   std::memcpy(&this[0], &data[0], data.size());
+
+   return *this;
+}
+
 template <typename DataType>
 void Remember::DataVector::append(const DataType& value)
 {

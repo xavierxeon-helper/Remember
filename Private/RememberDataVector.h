@@ -10,6 +10,8 @@ namespace Remember
    {
    public:
       inline DataVector(const size_t size = 0);
+      inline DataVector(const std::vector<uint8_t>& data);
+      inline DataVector& operator=(const std::vector<uint8_t>& data);
 
    public:
       // clang-format off
