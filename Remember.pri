@@ -12,6 +12,8 @@ HEADERS += \
     $$PWD/RememberValue.h \
     $$PWD/RememberValueArray.h \
     $$PWD/Remember.h \
+    $$PWD/RememberValueList.h \
+    $$PWD/RememberValueList.hpp
 
 HEADERS += \
    $$PWD/Private/RememberBase.hpp \
