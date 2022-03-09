@@ -16,17 +16,11 @@ namespace Remember
    public:
       Value& operator=(const DataType& other);
       operator DataType() const;
-      DataType& refValue();
-      const DataType& constValue() const;
+      operator DataType&();
 
    protected:
       void write(DataVector& data) const override;
       void read(const DataVector& data, size_t& cursor) override;
-
-   private:
-      // clang-format off
-      template <typename DataType2, uint16_t ArraySize> friend class ValueArray;
-      // clang-format on
 
    private:
       Value();

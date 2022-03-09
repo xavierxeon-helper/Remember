@@ -5,8 +5,6 @@
 
 #include <initializer_list>
 
-#include <RememberValue.h>
-
 namespace Remember
 {
    // array of things that can stream directly
@@ -19,15 +17,15 @@ namespace Remember
       ValueArray(Container* parent, std::initializer_list<DataType> initialValues);
 
    public:
-      Value<DataType>& operator[](const uint16_t index);
-      const Value<DataType>& operator[](const uint16_t index) const;
+      DataType& operator[](const uint16_t index);
+      const DataType& operator[](const uint16_t index) const;
 
    protected:
       void write(DataVector& data) const override;
       void read(const DataVector& data, size_t& cursor) override;
 
    private:
-      Value<DataType> members[ArraySize];
+      DataType members[ArraySize];
    };
 } // namespace Remember
 

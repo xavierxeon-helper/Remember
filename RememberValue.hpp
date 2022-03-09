@@ -29,13 +29,7 @@ Remember::Value<DataType>::operator DataType() const
 }
 
 template <typename DataType>
-DataType& Remember::Value<DataType>::refValue()
-{
-   return content;
-}
-
-template <typename DataType>
-const DataType& Remember::Value<DataType>::constValue() const
+Remember::Value<DataType>::operator DataType&()
 {
    return content;
 }

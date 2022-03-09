@@ -14,16 +14,16 @@ namespace Remember
    class ValueList : public Base
    {
    public:
-      ValueList(Container* parent);
-      ValueList(Container* parent, std::initializer_list<DataType> initialValues);
+      inline ValueList(Container* parent);
+      inline ValueList(Container* parent, std::initializer_list<DataType> initialValues);
 
    public:
-      Value<DataType>& operator[](const uint16_t index);
-      const Value<DataType>& operator[](const uint16_t index) const;
+      inline DataType& operator[](const uint16_t index);
+      inline const DataType& operator[](const uint16_t index) const;
 
    protected:
-      void write(DataVector& data) const override;
-      void read(const DataVector& data, size_t& cursor) override;
+      inline void write(DataVector& data) const override;
+      inline void read(const DataVector& data, size_t& cursor) override;
 
    private:
       std::vector<DataType> members;

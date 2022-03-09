@@ -7,5 +7,6 @@
 #include <RememberRoot.h>
 #include <RememberValue.h>
 #include <RememberValueArray.h>
+#include <RememberValueList.h>
 
 #endif // RememberH

@@ -22,7 +22,7 @@ Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent, std::in
    uint16_t index = 0;
    for (const DataType& value : initialValues)
    {
-      members[index].refValue() = value;
+      members[index] = value;
       index++;
       if (index == ArraySize)
          break;
@@ -30,13 +30,13 @@ Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent, std::in
 }
 
 template <typename DataType, uint16_t ArraySize>
-Remember::Value<DataType>& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index)
+DataType& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index)
 {
    return members[index];
 }
 
 template <typename DataType, uint16_t ArraySize>
-const Remember::Value<DataType>& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index) const
+const DataType& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index) const
 {
    return members[index];
 }
@@ -45,14 +45,18 @@ template <typename DataType, uint16_t ArraySize>
 void Remember::ValueArray<DataType, ArraySize>::write(DataVector& data) const
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].write(data);
+      data.append(members[index]);
 }
 
 template <typename DataType, uint16_t ArraySize>
 void Remember::ValueArray<DataType, ArraySize>::read(const DataVector& data, size_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
-      members[index].read(data, cursor);
+   {
+      DataType value;
+      data.copyToValue(value, cursor);
+      members[index] = value;
+   }
 }
 
 #endif // RememberValueArrayHPP
