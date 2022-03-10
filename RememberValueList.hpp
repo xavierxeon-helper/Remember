@@ -9,6 +9,7 @@ Remember::ValueList<DataType>::ValueList(Container* parent)
    , members()
 {
    static_assert(!std::is_base_of<Container, DataType>::value, "DataType must not inherit from container");
+   static_assert(!is_vector<DataType>::test, "DataType must not be a vector");
 }
 
 template <typename DataType>
@@ -29,6 +30,24 @@ template <typename DataType>
 const DataType& Remember::ValueList<DataType>::operator[](const uint16_t index) const
 {
    return members[index];
+}
+
+template <typename DataType>
+void Remember::ValueList<DataType>::append(const DataType& value)
+{
+   members.push_back(value);
+}
+
+template <typename DataType>
+size_t Remember::ValueList<DataType>::size() const
+{
+   return members.size();
+}
+
+template <typename DataType>
+void Remember::ValueList<DataType>::clear()
+{
+   members.clear();
 }
 
 template <typename DataType>

@@ -9,6 +9,8 @@ HEADERS += \
     $$PWD/RememberRef.h \
     $$PWD/RememberRefArray.h \
     $$PWD/RememberRoot.h \
+    $$PWD/RememberString.h \
+    $$PWD/RememberString.hpp \
     $$PWD/RememberValue.h \
     $$PWD/RememberValueArray.h \
     $$PWD/Remember.h \
