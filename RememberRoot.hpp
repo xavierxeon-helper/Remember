@@ -33,6 +33,9 @@ Remember::DataVector Remember::Root::get() const
 
 void Remember::Root::set(const DataVector& data)
 {
+   if (0 == data.size())
+      return;
+
    size_t cursor = 0;
    read(data, cursor);
 }
