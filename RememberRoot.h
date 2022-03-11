@@ -14,7 +14,6 @@ namespace Remember
    public:
       inline static void setUnsynced();
       inline static bool isUnsynced();
-      inline uint64_t compileDataSize() const;
       inline DataVector get() const;
       inline void set(const DataVector& data);
 

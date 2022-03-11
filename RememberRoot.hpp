@@ -18,11 +18,6 @@ bool Remember::Root::isUnsynced()
    return (synced == false);
 }
 
-uint64_t Remember::Root::compileDataSize() const
-{
-   return get().size();
-}
-
 Remember::DataVector Remember::Root::get() const
 {
    DataVector data;
