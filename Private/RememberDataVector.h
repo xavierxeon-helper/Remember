@@ -9,14 +9,14 @@ namespace Remember
    class DataVector : public std::vector<uint8_t>
    {
    public:
-      inline DataVector(const size_t size = 0);
+      inline DataVector(const uint64_t size = 0);
       inline DataVector(const std::vector<uint8_t>& data);
       inline DataVector& operator=(const std::vector<uint8_t>& data);
 
    public:
       // clang-format off
       template <typename DataType> void append(const DataType& value);
-      template <typename DataType> void copyToValue(DataType& value, size_t& cursor) const;
+      template <typename DataType> void copyToValue(DataType& value, uint64_t& cursor) const;
       // clang-format on
    };
 } // namespace Remember

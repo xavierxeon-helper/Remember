@@ -14,7 +14,7 @@ namespace Remember
 
    public:
       virtual void write(DataVector& data) const = 0;
-      virtual void read(const DataVector& data, size_t& cursor) = 0;
+      virtual void read(const DataVector& data, uint64_t& cursor) = 0;
    };
 
 } // namespace Remember

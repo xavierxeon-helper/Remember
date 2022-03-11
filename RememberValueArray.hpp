@@ -49,7 +49,7 @@ void Remember::ValueArray<DataType, ArraySize>::write(DataVector& data) const
 }
 
 template <typename DataType, uint16_t ArraySize>
-void Remember::ValueArray<DataType, ArraySize>::read(const DataVector& data, size_t& cursor)
+void Remember::ValueArray<DataType, ArraySize>::read(const DataVector& data, uint64_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
    {

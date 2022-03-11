@@ -12,7 +12,7 @@ namespace Remember
 
    protected:
       inline void write(DataVector& data) const override;
-      inline void read(const DataVector& data, size_t& cursor) override;
+      inline void read(const DataVector& data, uint64_t& cursor) override;
 
    private:
       friend class Base;

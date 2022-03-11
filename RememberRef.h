@@ -23,7 +23,7 @@ namespace Remember
 
    protected:
       void write(DataVector& rawData) const override;
-      void read(const DataVector& rawData, size_t& cursor) override;
+      void read(const DataVector& rawData, uint64_t& cursor) override;
 
    private:
       // clang-format off

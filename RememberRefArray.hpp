@@ -35,7 +35,7 @@ void Remember::RefArray<ContainerType, ArraySize>::write(DataVector& data) const
 }
 
 template <typename ContainerType, uint16_t ArraySize>
-void Remember::RefArray<ContainerType, ArraySize>::read(const DataVector& data, size_t& cursor)
+void Remember::RefArray<ContainerType, ArraySize>::read(const DataVector& data, uint64_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
       members[index].read(data, cursor);

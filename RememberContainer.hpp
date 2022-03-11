@@ -15,7 +15,7 @@ void Remember::Container::write(DataVector& data) const
       member->write(data);
 }
 
-void Remember::Container::read(const DataVector& data, size_t& cursor)
+void Remember::Container::read(const DataVector& data, uint64_t& cursor)
 {
    for (Interface* member : members)
       member->read(data, cursor);

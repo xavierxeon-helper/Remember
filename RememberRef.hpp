@@ -59,7 +59,7 @@ void Remember::Ref<ContainerType>::write(DataVector& rawData) const
 }
 
 template <typename ContainerType>
-void Remember::Ref<ContainerType>::read(const DataVector& rawData, size_t& cursor)
+void Remember::Ref<ContainerType>::read(const DataVector& rawData, uint64_t& cursor)
 {
    container.read(rawData, cursor);
 }

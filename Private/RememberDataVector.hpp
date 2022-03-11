@@ -3,7 +3,7 @@
 
 #include <Private/RememberDataVector.h>
 
-Remember::DataVector::DataVector(const size_t size)
+Remember::DataVector::DataVector(const uint64_t size)
    : std::vector<uint8_t>()
 {
    if (0 != size)
@@ -19,7 +19,7 @@ Remember::DataVector::DataVector(const std::vector<uint8_t>& data)
 Remember::DataVector& Remember::DataVector::operator=(const std::vector<uint8_t>& data)
 {
    resize(data.size());
-   for (size_t index = 0; index < data.size(); index++)
+   for (uint64_t index = 0; index < data.size(); index++)
       (*this)[index] = data[index];
 
    return *this;
@@ -36,12 +36,12 @@ void Remember::DataVector::append(const DataType& value)
 
    convert.in = value;
 
-   for (size_t index = 0; index < sizeof(DataType); index++)
+   for (uint64_t index = 0; index < sizeof(DataType); index++)
       push_back(convert.out[index]);
 }
 
 template <typename DataType>
-void Remember::DataVector::copyToValue(DataType& value, size_t& cursor) const
+void Remember::DataVector::copyToValue(DataType& value, uint64_t& cursor) const
 {
    union
    {
@@ -49,7 +49,7 @@ void Remember::DataVector::copyToValue(DataType& value, size_t& cursor) const
       DataType out;
    } convert;
 
-   for (size_t index = 0; index < sizeof(DataType); index++)
+   for (uint64_t index = 0; index < sizeof(DataType); index++)
       convert.in[index] = at(cursor + index);
 
    value = convert.out;

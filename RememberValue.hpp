@@ -41,7 +41,7 @@ void Remember::Value<DataType>::write(DataVector& data) const
 }
 
 template <typename DataType>
-void Remember::Value<DataType>::read(const DataVector& data, size_t& cursor)
+void Remember::Value<DataType>::read(const DataVector& data, uint64_t& cursor)
 {
    data.copyToValue(content, cursor);
 }

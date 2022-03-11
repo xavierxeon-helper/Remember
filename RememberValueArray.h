@@ -22,7 +22,7 @@ namespace Remember
 
    protected:
       void write(DataVector& data) const override;
-      void read(const DataVector& data, size_t& cursor) override;
+      void read(const DataVector& data, uint64_t& cursor) override;
 
    private:
       DataType members[ArraySize];
