@@ -18,6 +18,7 @@ namespace Remember
       friend class Base;
       // clang-format off
       template <typename ContainerType> friend class Ref;
+      template <typename ContainerType, uint16_t ArraySize> friend class RefArray;
       // clang-format on
    private:
       Interface::List members;

@@ -53,8 +53,8 @@ void Remember::ValueList<DataType>::clear()
 template <typename DataType>
 void Remember::ValueList<DataType>::write(DataVector& data) const
 {
-   const uint64_t data_size = members.size();
-   data.append(data_size);
+   const uint64_t counter = members.size();
+   data.append(counter);
 
    for (const DataType& value : members)
       data.append(value);
@@ -63,11 +63,11 @@ void Remember::ValueList<DataType>::write(DataVector& data) const
 template <typename DataType>
 void Remember::ValueList<DataType>::read(const DataVector& data, uint64_t& cursor)
 {
-   uint64_t data_size = 0;
-   data.copyToValue(data_size, cursor);
-   members.resize(data_size);
+   uint64_t counter = 0;
+   data.copyToValue(counter, cursor);
+   members.resize(counter);
 
-   for (uint64_t index = 0; index < data_size; index++)
+   for (uint64_t index = 0; index < counter; index++)
    {
       DataType value;
       data.copyToValue(value, cursor);

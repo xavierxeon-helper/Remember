@@ -16,13 +16,13 @@ Remember::RefArray<ContainerType, ArraySize>::RefArray(Container* parent)
 }
 
 template <typename ContainerType, uint16_t ArraySize>
-Remember::Ref<ContainerType>& Remember::RefArray<ContainerType, ArraySize>::operator[](const uint16_t index)
+ContainerType& Remember::RefArray<ContainerType, ArraySize>::operator[](const uint16_t index)
 {
    return members[index];
 }
 
 template <typename ContainerType, uint16_t ArraySize>
-const Remember::Ref<ContainerType>& Remember::RefArray<ContainerType, ArraySize>::operator[](const uint16_t index) const
+const ContainerType& Remember::RefArray<ContainerType, ArraySize>::operator[](const uint16_t index) const
 {
    return members[index];
 }
@@ -31,14 +31,18 @@ template <typename ContainerType, uint16_t ArraySize>
 void Remember::RefArray<ContainerType, ArraySize>::write(DataVector& data) const
 {
    for (uint16_t index = 0; index < ArraySize; index++)
+   {
       members[index].write(data);
+   }
 }
 
 template <typename ContainerType, uint16_t ArraySize>
 void Remember::RefArray<ContainerType, ArraySize>::read(const DataVector& data, uint64_t& cursor)
 {
    for (uint16_t index = 0; index < ArraySize; index++)
+   {
       members[index].read(data, cursor);
+   }
 }
 
 #endif // RememberRefArrayHPP

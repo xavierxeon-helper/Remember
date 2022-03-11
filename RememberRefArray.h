@@ -16,15 +16,15 @@ namespace Remember
       RefArray(Container* parent);
 
    public:
-      Ref<ContainerType>& operator[](const uint16_t index);
-      const Ref<ContainerType>& operator[](const uint16_t index) const;
+      ContainerType& operator[](const uint16_t index);
+      const ContainerType& operator[](const uint16_t index) const;
 
    protected:
       void write(DataVector& data) const override;
       void read(const DataVector& data, uint64_t& cursor) override;
 
    private:
-      Ref<ContainerType> members[ArraySize];
+      ContainerType members[ArraySize];
    };
 } // namespace Remember
 

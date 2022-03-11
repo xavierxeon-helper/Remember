@@ -6,8 +6,6 @@
 #include <initializer_list>
 #include <vector>
 
-#include <RememberValue.h>
-
 namespace Remember
 {
    template <typename DataType>

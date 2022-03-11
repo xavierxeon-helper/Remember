@@ -8,6 +8,8 @@ HEADERS += \
     $$PWD/RememberContainer.h \
     $$PWD/RememberRef.h \
     $$PWD/RememberRefArray.h \
+    $$PWD/RememberRefList.h \
+    $$PWD/RememberRefList.hpp \
     $$PWD/RememberRoot.h \
     $$PWD/RememberString.h \
     $$PWD/RememberString.hpp \

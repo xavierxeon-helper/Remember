@@ -18,8 +18,6 @@ namespace Remember
       operator ContainerType*();
       ContainerType* operator->();
       const ContainerType* operator->() const;
-      ContainerType* pointer();
-      const ContainerType* constPointer() const;
 
    protected:
       void write(DataVector& rawData) const override;

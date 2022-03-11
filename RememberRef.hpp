@@ -41,18 +41,6 @@ const ContainerType* Remember::Ref<ContainerType>::operator->() const
 }
 
 template <typename ContainerType>
-ContainerType* Remember::Ref<ContainerType>::pointer()
-{
-   return &container;
-}
-
-template <typename ContainerType>
-const ContainerType* Remember::Ref<ContainerType>::constPointer() const
-{
-   return &container;
-}
-
-template <typename ContainerType>
 void Remember::Ref<ContainerType>::write(DataVector& rawData) const
 {
    container.write(rawData);

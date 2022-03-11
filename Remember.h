@@ -4,6 +4,7 @@
 #include <RememberContainer.h>
 #include <RememberRef.h>
 #include <RememberRefArray.h>
+#include <RememberRefList.h>
 #include <RememberRoot.h>
 #include <RememberString.h>
 #include <RememberValue.h>
