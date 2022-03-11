@@ -14,12 +14,12 @@ namespace Remember
    public:
       inline static void setUnsynced();
       inline static bool isUnsynced();
-
-   protected:
-      inline void setSynced();
       inline size_t compileDataSize() const;
       inline DataVector get() const;
       inline void set(const DataVector& data);
+
+   protected:
+      inline void setSynced();
 
    private:
       using Container::read;
