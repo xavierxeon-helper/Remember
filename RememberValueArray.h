@@ -1,6 +1,7 @@
 #ifndef RememberValueArrayH
 #define RememberValueArrayH
 
+#include <Private/RememberArray.h>
 #include <Private/RememberBase.h>
 
 #include <initializer_list>
@@ -10,22 +11,18 @@ namespace Remember
    // array of things that can stream directly
 
    template <typename DataType, uint16_t ArraySize>
-   class ValueArray : public Base
+   class ValueArray : public Base, public Array<DataType, ArraySize>
    {
    public:
       ValueArray(Container* parent);
       ValueArray(Container* parent, std::initializer_list<DataType> initialValues);
-
-   public:
-      DataType& operator[](const uint16_t index);
-      const DataType& operator[](const uint16_t index) const;
 
    protected:
       void write(DataVector& data) const override;
       void read(const DataVector& data, uint64_t& cursor) override;
 
    private:
-      DataType members[ArraySize];
+      using Remember::Array<DataType, ArraySize>::members;
    };
 } // namespace Remember
 

@@ -10,40 +10,9 @@
 template <typename ContainerType>
 Remember::RefList<ContainerType>::RefList(Container* parent)
    : Base(parent)
-   , members()
+   , Remember::List<ContainerType>()
 {
    static_assert(std::is_base_of<Container, ContainerType>::value, "ContainerType must inherit from container");
-   static_assert(!is_vector<Container>::test, "DataType must not be a vector");
-}
-
-template <typename ContainerType>
-ContainerType& Remember::RefList<ContainerType>::operator[](const uint16_t index)
-{
-   return members[index];
-}
-
-template <typename ContainerType>
-const ContainerType& Remember::RefList<ContainerType>::operator[](const uint16_t index) const
-{
-   return members[index];
-}
-
-template <typename ContainerType>
-void Remember::RefList<ContainerType>::append(const ContainerType& container)
-{
-   members.push_back(container);
-}
-
-template <typename ContainerType>
-uint64_t Remember::RefList<ContainerType>::size() const
-{
-   return members.size();
-}
-
-template <typename ContainerType>
-void Remember::RefList<ContainerType>::clear()
-{
-   members.clear();
 }
 
 template <typename ContainerType>

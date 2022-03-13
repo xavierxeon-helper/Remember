@@ -1,7 +1,7 @@
 #ifndef RememberInterfaceH
 #define RememberInterfaceH
 
-#include <MusicTools.h>
+#include <vector>
 
 #include <Private/RememberDataVector.h>
 

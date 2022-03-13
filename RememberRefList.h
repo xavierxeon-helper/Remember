@@ -2,30 +2,22 @@
 #define RememberRefListH
 
 #include <Private/RememberBase.h>
-
-#include <vector>
+#include <Private/RememberList.h>
 
 namespace Remember
 {
    template <typename ContainerType>
-   class RefList : public Base
+   class RefList : public Base, public List<ContainerType>
    {
    public:
       inline RefList(Container* parent);
-
-   public:
-      inline ContainerType& operator[](const uint16_t index);
-      inline const ContainerType& operator[](const uint16_t index) const;
-      inline void append(const ContainerType& container);
-      inline uint64_t size() const;
-      inline void clear();
 
    protected:
       inline void write(DataVector& data) const override;
       inline void read(const DataVector& data, uint64_t& cursor) override;
 
-   protected:
-      std::vector<ContainerType> members;
+   private:
+      using Remember::List<ContainerType>::members;
    };
 } // namespace Remember
 

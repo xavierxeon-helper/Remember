@@ -5,12 +5,10 @@
 
 #include <type_traits>
 
-#include <RememberContainer.h>
-
 template <typename DataType, uint16_t ArraySize>
 Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent)
    : Base(parent)
-   , members()
+   , Remember::Array<DataType, ArraySize>()
 {
    static_assert(!std::is_base_of<Container, DataType>::value, "DataType must not inherit from container");
 }
@@ -27,18 +25,6 @@ Remember::ValueArray<DataType, ArraySize>::ValueArray(Container* parent, std::in
       if (index == ArraySize)
          break;
    }
-}
-
-template <typename DataType, uint16_t ArraySize>
-DataType& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index)
-{
-   return members[index];
-}
-
-template <typename DataType, uint16_t ArraySize>
-const DataType& Remember::ValueArray<DataType, ArraySize>::operator[](const uint16_t index) const
-{
-   return members[index];
 }
 
 template <typename DataType, uint16_t ArraySize>

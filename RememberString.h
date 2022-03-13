@@ -3,6 +3,8 @@
 
 #include <RememberValueList.h>
 
+#include <string>
+
 namespace Remember
 {
    class String : public ValueList<char>
