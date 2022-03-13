@@ -19,8 +19,11 @@ namespace Remember
       inline List<ContentType>& operator=(const std::vector<ContentType>& other);
 
       inline void append(const ContentType& value);
-      inline uint64_t size() const;
+      inline void insert(const ContentType& value, const uint64_t atIndex);
+      inline bool remove(const uint64_t atIndex);
       inline void clear();
+
+      inline uint64_t size() const;
 
    protected:
       std::vector<ContentType> members;

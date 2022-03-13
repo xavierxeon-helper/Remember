@@ -61,6 +61,25 @@ void Remember::List<ContentType>::append(const ContentType& value)
 }
 
 template <typename ContentType>
+void Remember::List<ContentType>::insert(const ContentType& value, const uint64_t atIndex)
+{
+   if (atIndex >= size())
+      members.push_back(value);
+   else
+      members.insert(members.begin() + atIndex, value);
+}
+
+template <typename ContentType>
+bool Remember::List<ContentType>::remove(const uint64_t atIndex)
+{
+   if (atIndex >= size())
+      return false;
+
+   members.erase(members.begin() + atIndex);
+   return true;
+}
+
+template <typename ContentType>
 uint64_t Remember::List<ContentType>::size() const
 {
    return members.size();
