@@ -1,2 +1,2 @@
 # Remember
-Load and save class meber variables
+Load and save class member variables
