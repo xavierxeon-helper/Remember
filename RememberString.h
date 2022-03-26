@@ -20,6 +20,8 @@ namespace Remember
 
 } // namespace Remember
 
+#ifndef RememberStringHPP
 #include "RememberString.hpp"
+#endif // NOT RememberStringHPP
 
 #endif // RememberStringH

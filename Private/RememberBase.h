@@ -15,6 +15,8 @@ namespace Remember
 
 } // namespace Remember
 
-#include <Private/RememberBase.hpp>
+#ifndef RememberBaseHPP
+#include "Private/RememberBase.hpp"
+#endif // NOT RememberBaseHPP
 
 #endif //  RememberBaseH

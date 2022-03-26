@@ -13,6 +13,10 @@ namespace Remember
       using List = std::vector<Interface*>;
 
    public:
+      Interface();
+      virtual ~Interface();
+
+   public:
       virtual void write(DataVector& data) const = 0;
       virtual void read(const DataVector& data, uint64_t& cursor) = 0;
    };

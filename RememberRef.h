@@ -36,6 +36,8 @@ namespace Remember
    };
 } // namespace Remember
 
+#ifndef RememberRefHPP
 #include "RememberRef.hpp"
+#endif // NOT RememberRefH
 
 #endif //  RememberRefH

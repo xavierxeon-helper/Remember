@@ -21,6 +21,8 @@ namespace Remember
    };
 } // namespace Remember
 
+#ifndef RememberArrayHPP
 #include "RememberArray.hpp"
+#endif // NOT RememberArrayHPP
 
 #endif // RememberArrayH

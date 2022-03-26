@@ -30,6 +30,8 @@ namespace Remember
    };
 } // namespace Remember
 
-#include <RememberValue.hpp>
+#ifndef RememberValueHPP
+#include "RememberValue.hpp"
+#endif // NOT RememberValueHPP
 
 #endif //  RememberValueH

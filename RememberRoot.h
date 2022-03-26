@@ -16,8 +16,6 @@ namespace Remember
       inline static bool isUnsynced();
       inline DataVector get() const;
       inline void set(const DataVector& data);
-
-   protected:
       inline void setSynced();
 
    private:
@@ -28,6 +26,8 @@ namespace Remember
    };
 } // namespace Remember
 
-#include <RememberRoot.hpp>
+#ifndef RememberRootHPP
+#include "RememberRoot.hpp"
+#endif // NOT RememberRootHPP
 
 #endif // RememberRootH

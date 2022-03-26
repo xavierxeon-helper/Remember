@@ -7,7 +7,6 @@ template <typename DataType>
 Remember::ValueList<DataType>::ValueList(Container* parent)
    : Base(parent)
    , Remember::List<DataType>()
-
 {
    static_assert(!std::is_base_of<Container, DataType>::value, "DataType must not inherit from container");
 }

@@ -9,7 +9,7 @@ Remember::String::String(Container* parent)
 }
 
 Remember::String::String(Container* parent, const std::string& text)
-   : String(parent)
+   : ValueList<char>(parent)
 {
    *this = text;
 }

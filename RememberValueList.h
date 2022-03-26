@@ -26,6 +26,8 @@ namespace Remember
 
 } // namespace Remember
 
+#ifndef RememberValueListHPP
 #include "RememberValueList.hpp"
+#endif // NOT RememberValueListH
 
 #endif // RememberValueListH

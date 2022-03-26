@@ -21,6 +21,8 @@ namespace Remember
    };
 } // namespace Remember
 
-#include <Private/RememberDataVector.hpp>
+#ifndef RememberDataVectorHPP
+#include "Private/RememberDataVector.hpp"
+#endif // NOT RememberDataVectorHPP
 
 #endif //  RememberDataVectorH

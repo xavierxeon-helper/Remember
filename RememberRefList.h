@@ -6,6 +6,8 @@
 
 namespace Remember
 {
+   // to use a container in a ref list, the derived function needs a copy constructor
+
    template <typename ContainerType>
    class RefList : public Base, public List<ContainerType>
    {
@@ -21,6 +23,8 @@ namespace Remember
    };
 } // namespace Remember
 
+#ifndef RememberRefListHPP
 #include "RememberRefList.hpp"
+#endif // NOT RememberRefListHPP
 
 #endif // RememberRefListH

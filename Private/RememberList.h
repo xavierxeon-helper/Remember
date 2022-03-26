@@ -30,6 +30,8 @@ namespace Remember
    };
 } // namespace Remember
 
+#ifndef RememberListHPP
 #include "RememberList.hpp"
+#endif // NOT RememberListHPP
 
 #endif // RememberListH

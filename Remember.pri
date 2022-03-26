@@ -34,4 +34,5 @@ HEADERS += \
    $$PWD/RememberValueArray.hpp
 
 SOURCES += \
+    $$PWD/RememberInterface.cpp \
     $$PWD/RememberRoot.cpp

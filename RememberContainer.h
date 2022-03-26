@@ -9,6 +9,7 @@ namespace Remember
    {
    public:
       inline Container();
+      inline Container(const Container& other) = delete; // to use a container in a ref list, the derived function needs a copy constructor
 
    protected:
       inline void write(DataVector& data) const override;
@@ -26,6 +27,8 @@ namespace Remember
    };
 } // namespace Remember
 
-#include <RememberContainer.hpp>
+#ifndef RememberContainerHPP
+#include "RememberContainer.hpp"
+#endif // NOT RememberContainerHPP
 
 #endif //  RememberContainerH
