@@ -30,4 +30,4 @@ namespace Remember
 #include "RememberValueArray.hpp"
 #endif // NOT RememberValueArrayHPP
 
-#endif //  RememberValueArrayH
+#endif //  NOT RememberValueArrayH

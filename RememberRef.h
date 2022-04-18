@@ -24,11 +24,6 @@ namespace Remember
       void read(const DataVector& rawData, uint64_t& cursor) override;
 
    private:
-      // clang-format off
-      template <typename DataType2, uint16_t ArraySize> friend class RefArray;
-      // clang-format on
-
-   private:
       Ref();
 
    private:
