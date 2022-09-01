@@ -35,6 +35,12 @@ Remember::Value<DataType>::operator DataType&()
 }
 
 template <typename DataType>
+const DataType& Remember::Value<DataType>::constRef() const
+{
+   return content;
+}
+
+template <typename DataType>
 void Remember::Value<DataType>::write(DataVector& data) const
 {
    data.append(content);

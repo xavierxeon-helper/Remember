@@ -18,6 +18,8 @@ namespace Remember
       operator DataType() const;
       operator DataType&();
 
+      const DataType& constRef() const;
+
    protected:
       void write(DataVector& data) const override;
       void read(const DataVector& data, uint64_t& cursor) override;
