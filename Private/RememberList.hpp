@@ -80,15 +80,22 @@ bool Remember::List<ContentType>::remove(const uint64_t atIndex)
 }
 
 template <typename ContentType>
+void Remember::List<ContentType>::clear()
+
+{
+   members.clear();
+}
+
+template <typename ContentType>
 uint64_t Remember::List<ContentType>::size() const
 {
    return members.size();
 }
 
 template <typename ContentType>
-void Remember::List<ContentType>::clear()
+bool Remember::List<ContentType>::empty() const
 {
-   members.clear();
+   return members.empty();
 }
 
 #endif // RememberListHPP

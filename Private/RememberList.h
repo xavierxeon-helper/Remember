@@ -24,6 +24,7 @@ namespace Remember
       inline void clear();
 
       inline uint64_t size() const;
+      inline bool empty() const;
 
    protected:
       std::vector<ContentType> members;
