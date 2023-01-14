@@ -13,7 +13,9 @@ namespace Remember
 
    protected:
       inline void write(DataVector& data) const override;
+
       inline void read(const DataVector& data, uint64_t& cursor) override;
+      inline virtual void postRead();
 
    private:
       friend class Base;

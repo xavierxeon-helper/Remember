@@ -19,6 +19,12 @@ void Remember::Container::read(const DataVector& data, uint64_t& cursor)
 {
    for (Interface* member : members)
       member->read(data, cursor);
+   postRead();
+}
+
+void Remember::Container::postRead()
+{
+   // do nothing
 }
 
 #endif // RememberContainerHPP
